@@ -25,6 +25,10 @@ def fibonacci_client():
     # Sends the goal to the action server.
     client.send_goal(goal)
 
+    #rospy.sleep(1)
+    #client.cancel_goal()
+    #print(client.get_goal_status_text())
+
     # Waits for the server to finish performing the action.
     client.wait_for_result()
 

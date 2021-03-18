@@ -6,28 +6,27 @@ example templates for python ROS nodes
   * http://wiki.ros.org/ROS/Tutorials/catkin/CreatingPackage
 
 * Pulling code from github
-  * Cd into new package
-  * Git init
-  * Git origin
-  * Git pull
+  * Cd into new package you created above
+  * enter: git clone https://github.com/agillies8/node_templates
   * cd to catkin_ws && Catkin_make
   * Change file permissions: chmod +x for all python files in /src
 
-* Publisher.py:
+* publisher.py:
   * Review main components
   * Start roscore
-  * Launch node
-  * Run the node
-  * Rostopic echo
+  * run the node: rosrun node_templates publisher.py
+  * Rostopic echo mymessage in new terminal
   * Change message and observe
   * Add a counter publisher
-  * Observe
+  * Observe as above with rostopic echo
 
-* Subscriber.py:
+* subscriber.py:
   * Review main components
-  * Start with publisher
+  * make sure roscore is still running
+  * run the publisher as above
+  * run the subscriber: rosrun node_templates subscriber.py
   * Interrogate result
-  * Add subscriber to int
+  * Add int to subscriber
 
 * SubNpub.py:
   * Review main components
@@ -38,10 +37,13 @@ example templates for python ROS nodes
 * create and use a ros service:
   * Create a service: http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv#Creating_a_srv
   * Create a service server and client: http://wiki.ros.org/ROS/Tutorials/WritingServiceClient%28python%29
-  * Run and examine
+  * Run and examine:
+    * rosrun node_templates serviceServer.py
+    * rosrun node_templates serviceClient.py 2 3
 
 * Call an action server: http://wiki.ros.org/actionlib_tutorials/TutorialsReview the docs: http://wiki.ros.org/actionlib_tutorials/Tutorials
   * Review server: 
-  * Review client:
+  * Review client: http://docs.ros.org/en/jade/api/actionlib/html/classactionlib_1_1simple__action__client_1_1SimpleActionClient.html
   * Send message and wait for goal
   * Preempt a goal
+  * interrogate an action while is is executing
